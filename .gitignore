@@ -34,3 +34,19 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /config/credentials.yml.enc
+
+# for Mac
+*.DS_Store
+
+# editer config
+/.vscode
+
+# DB
+/config/database.yml
+/storage*
+
+# cache
+/tmp*
+
+# log
+/log*
