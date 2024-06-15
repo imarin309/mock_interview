@@ -1,0 +1,14 @@
+inherit_from: .rubocop_todo.yml
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 30
+
+require:
+  - rubocop-ast
+  - rubocop-performance
+  - rubocop-rspec
+  - rubocop-rails
+  - rubocop-rake
