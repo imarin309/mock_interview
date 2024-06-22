@@ -10,10 +10,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v4
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
 
