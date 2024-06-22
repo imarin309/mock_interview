@@ -1,7 +1,6 @@
 name: Run lint
 
 on:
-  push:
   pull_request:
 
 jobs:
@@ -14,7 +13,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@v4
         with:
           bundler-cache: true
 
