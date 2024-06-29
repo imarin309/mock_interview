@@ -2,4 +2,5 @@
 
 class InterviewController < ApplicationController
   def index; end
+  def interview; end
 end
