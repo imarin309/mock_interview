@@ -2,5 +2,8 @@
 
 class InterviewController < ApplicationController
   def index; end
-  def interview; end
+
+  def interview
+    @question = view_context.extract_question_introduction
+  end
 end
