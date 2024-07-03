@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   root 'interview#index'
-  get 'interview/interview' => 'interview#interview'
+  get 'interview/interview_introduction' => 'interview#interview_introduction'
 
   get 'up' => 'rails/health#show', as: :rails_health_check
 end
