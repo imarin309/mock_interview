@@ -1,34 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中央に配置された画像とテキストボックス</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .center-content {
-            text-align: center;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        .textbox {
-            margin-top: 20px;
-        }
-        .resized-image {
-            max-width: 100%;
-            height: 200px;
-        }
-    </style>
-</head>
 <body>
     <div class="center-content">
         <%= image_tag 'imarin.jpg' , class: "resized-image"%>
@@ -36,4 +5,3 @@
         <button><%= link_to '次へ', '/interview/interview_personal' %></button>
     </div>
 </body>
-</html>
