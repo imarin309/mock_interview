@@ -6,8 +6,7 @@ class InterviewController < ApplicationController
   def submit
     @textbox_value = params[:textbox]
     @source_view = params[:source_view]
-    Rails.logger.debug(@source_view)
-
+    
     case @source_view # TODO: 綺麗に書く、ロジックを移動させる
     when 'introduction'
       link_to_url = '/interview/interview_work'
