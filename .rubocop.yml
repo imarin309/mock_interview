@@ -6,6 +6,9 @@ Style/Documentation:
 Metrics/BlockLength:
   Max: 30
 
+Metrics/MethodLength:
+  Enabled: false
+
 require:
   - rubocop-ast
   - rubocop-performance

@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   get 'interview/interview_career' => 'interview#interview_career'
   get 'interview/end' => 'interview#end'
 
+  post 'submit', to: 'interview#submit'
+
   get 'up' => 'rails/health#show', as: :rails_health_check
 end
