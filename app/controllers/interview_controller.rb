@@ -28,32 +28,32 @@ class InterviewController < ApplicationController
 
   def interview_introduction
     @question = view_context.extract_question_introduction
-    @source_view = "introduction"
+    @source_view = 'introduction'
   end
 
   def interview_work
     @question = view_context.extract_question_work
-    @source_view = "work"
+    @source_view = 'work'
   end
 
   def interview_personal
     @question = view_context.extract_question_personal
-    @source_view = "personal"
+    @source_view = 'personal'
   end
 
   def interview_communication
     @question = view_context.extract_question_communication
-    @source_view = "communication"
+    @source_view = 'communication'
   end
 
   def interview_engineer
     @question = view_context.extract_question_engineer
-    @source_view = "engineer"
+    @source_view = 'engineer'
   end
 
   def interview_career
     @question = view_context.extract_question_career
-    @source_view = "career"
+    @source_view = 'career'
   end
 
   def end; end
