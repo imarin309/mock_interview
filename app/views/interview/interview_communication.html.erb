@@ -1,13 +1,1 @@
-<body>
-    <div class="center-content">
-        <%= image_tag 'imarin.jpg' , class: "resized-image"%>
-        <p><%= @question %></p>
-        <%= form_with url: "/submit", method: :post do %>
-        <div>
-            <%= text_area_tag :textbox, nil, class: "large-textbox" , placeholder: "回答を入力してください"%><br>
-            <%= hidden_field_tag :source_view, 'communication' %>
-            <%= submit_tag "次の質問へ" %>
-        </div>
-        <% end %>
-    </div>
-</body>
+<%= render 'common/interview' %>
