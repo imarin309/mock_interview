@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
 class InterviewController < ApplicationController
+  before_action :set_question_hash, only: %i[submit end]
+
   def index; end
 
   def submit
     @textbox_value = params[:textbox]
     @source_view = params[:source_view]
+    @question_hash[@source_view] = @textbox_value
+    save_question_hash
 
     case @source_view # TODO: 綺麗に書く、ロジックを移動させる
     when 'introduction'
@@ -56,5 +60,18 @@ class InterviewController < ApplicationController
     @source_view = 'career'
   end
 
-  def end; end
+  def end
+    Rails.logger.debug(@question_hash)
+    @aaa = @question_hash['introduction']
+  end
+
+  private
+
+  def set_question_hash
+    @question_hash = session[:question_hash] || { default_key: 'default_value' }
+  end
+
+  def save_question_hash
+    session[:question_hash] = @question_hash
+  end
 end
