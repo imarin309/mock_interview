@@ -1,11 +1,18 @@
 # frozen_string_literal: true
 
 class InterviewController < ApplicationController
-  def index; end
+  before_action :set_var
+
+  def index
+    @question_hash = {}
+    save_question_hash
+  end
 
   def submit
     @textbox_value = params[:textbox]
     @source_view = params[:source_view]
+    @question_hash[@question] = @textbox_value
+    save_question_hash
 
     case @source_view # TODO: 綺麗に書く、ロジックを移動させる
     when 'introduction'
@@ -29,11 +36,13 @@ class InterviewController < ApplicationController
   def interview_introduction
     @question = view_context.extract_question_introduction
     @source_view = 'introduction'
+    save_question
   end
 
   def interview_work
     @question = view_context.extract_question_work
     @source_view = 'work'
+    save_question
   end
 
   def interview_personal
@@ -44,17 +53,35 @@ class InterviewController < ApplicationController
   def interview_communication
     @question = view_context.extract_question_communication
     @source_view = 'communication'
+    save_question
   end
 
   def interview_engineer
     @question = view_context.extract_question_engineer
     @source_view = 'engineer'
+    save_question
   end
 
   def interview_career
     @question = view_context.extract_question_career
     @source_view = 'career'
+    save_question
   end
 
   def end; end
+
+  private
+
+  def set_var
+    @question_hash = session[:question_hash]
+    @question = session[:question]
+  end
+
+  def save_question_hash
+    session[:question_hash] = @question_hash
+  end
+
+  def save_question
+    session[:question] = @question
+  end
 end
