@@ -3,10 +3,7 @@
 class InterviewController < ApplicationController
   before_action :set_var
 
-  def index
-    @question_hash = {}
-    save_question_hash
-  end
+  def index; end
 
   def submit
     @textbox_value = params[:textbox]
@@ -34,9 +31,11 @@ class InterviewController < ApplicationController
   end
 
   def interview_introduction
+    @question_hash = {}
     @question = view_context.extract_question_introduction
     @source_view = 'introduction'
     save_question
+    save_question_hash
   end
 
   def interview_work
