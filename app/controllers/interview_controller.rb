@@ -19,8 +19,6 @@ class InterviewController < ApplicationController
     when 'personal'
       link_to_url = '/interview/interview_communication'
     when 'communication'
-      link_to_url = '/interview/interview_engineer'
-    when 'engineer'
       link_to_url = '/interview/interview_career'
     when 'career'
       link_to_url = '/interview/end'
@@ -52,12 +50,6 @@ class InterviewController < ApplicationController
   def interview_communication
     @question = view_context.extract_question_communication
     @source_view = 'communication'
-    save_question
-  end
-
-  def interview_engineer
-    @question = view_context.extract_question_engineer
-    @source_view = 'engineer'
     save_question
   end
 
