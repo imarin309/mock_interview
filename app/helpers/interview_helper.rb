@@ -27,12 +27,8 @@ QUESTION_COMMUNICATION = [
   '他の人と意見が対立したときのことを教えてください。'
 ].freeze
 
-QUESTION_ENGINEER = [
-  'どのような開発の進め方を経験してこられましたか？',
-  'スキル・経験値のアップはどんなことをしてますか？'
-].freeze
 QUESTION_CAREER = [
-  'どのようなエンジニアになりたいですか？',
+  '5年後どのような人材になりたいですか？',
   'キャリアプランをどのように考えていますか？'
 ].freeze
 
@@ -51,10 +47,6 @@ module InterviewHelper
 
   def extract_question_communication
     QUESTION_COMMUNICATION.sample
-  end
-
-  def extract_question_engineer
-    QUESTION_ENGINEER.sample
   end
 
   def extract_question_career
