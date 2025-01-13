@@ -45,6 +45,7 @@ class InterviewController < ApplicationController
   def interview_personal
     @question = view_context.extract_question_personal
     @source_view = 'personal'
+    save_question
   end
 
   def interview_communication
