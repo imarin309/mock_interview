@@ -1,19 +1,18 @@
-# ベースイメージ
 FROM ruby:3.3.0
 
+RUN apt-get update -qq && apt-get install -y nodejs yarn
 
-# 作業ディレクトリを設定
 WORKDIR /app
+COPY . /app
 
-# Gemfile をコピーして bundle install
-COPY Gemfile Gemfile.lock ./
+RUN gem install bundler
 RUN bundle install
 
-# アプリケーションファイルをコピー
-COPY . .
+# RUN bundle exec rake assets:precompile
 
-# ポートを指定
 EXPOSE 3000
 
-# サーバー起動コマンド
+ENV RAILS_ENV="development" 
+
 CMD ["rails", "server", "-b", "0.0.0.0"]
+# CMD ["ls"]
