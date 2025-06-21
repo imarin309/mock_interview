@@ -2,21 +2,28 @@
 
 # Ignore git directory.
 /.git/
+/.github/*
 
 # Ignore bundler config.
 /.bundle
 
 # Ignore all environment files (except templates).
 /.env*
+.env*
 !/.env*.erb
 
 # Ignore all default key files.
 /config/master.key
 /config/credentials/*.key
+config/master.key
+config/credentials/*.key
 
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+log/*
+tmp/*
+test/*
 !/log/.keep
 !/tmp/.keep
 
@@ -35,3 +42,6 @@
 /app/assets/builds/*
 !/app/assets/builds/.keep
 /public/assets
+
+Dockerfile
+.dockerignore
